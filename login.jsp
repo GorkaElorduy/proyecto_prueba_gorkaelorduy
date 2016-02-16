@@ -1,21 +1,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<%@page import="com.ipartek.formacion.backoffice.Constantes"%>
+<%@page import="com.ipartek.formacion.pruebapractica.pruebaGorka.Constantes"%>
 <%@ page errorPage="pages/error/error.jsp" %>
 
-<%@ page import="com.ipartek.formacion.backoffice.controladores.Mensaje"%>
+<%@ page import="com.ipartek.formacion.pruebagorka.controladores.Mensaje"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 
 
-<c:set var="language" value="${cookie.cIdioma.value==''?'eu_ES':cookie.cIdioma.value }" />
-<fmt:setLocale value="${language}" />
-<fmt:setBundle basename="i18nmesages" /> 
 
 
 
 <!DOCTYPE html>
-<html lang="${language}">
+
 <head>
 <title>HTML5 Login</title>
 <link rel="stylesheet" href="css/normalize.css">
@@ -29,33 +26,26 @@
 		<form name="login" action="<%=Constantes.CONTROLLER_LOGIN%>" method="post"
 			accept-charset="utf-8">
 			<ul>
-				<li><label for="email"><fmt:message key="login.email" /></label> 
-					<input type="email"		
-					       name="email" 
-					       placeholder="tuemail@email.com" 
+				<li><label for="nombre"><fmt:message key="login.email" /></label> 
+					<input type="text"		
+					       name="nombre" 
+					  
 					       value="${cookie.cEmail.value}"
 					       required>
 				</li>
-				<li><label for="password">Password</label> 
+				<li><label for="apellido">Password</label> 
 					<input type="password" 
-					       name="password" 
+					       name="apellido" 
 					       placeholder="password" 
 					       required>
 				</li>
-				<li>
-					<label for="idioma"><fmt:message key="login.idioma" /></label> 
-					<select name="idioma" id="idioma">
-						<option value="es_ES" <c:if test="${language == 'es_ES'}">selected</c:if>>Castellano</option>
-						<option value="eu_ES" <c:if test="${language == 'eu_ES'}">selected</c:if>>Euskara</option>
-						<option value="en_EN" <c:if test="${language == 'en_EN'}">selected</c:if>>English</option>
-				</select>
-				</li>
+				
 				
 				<li>
 					<input type="submit" value="Acceder">
 					<br>
 					<input type="checkbox" id="recuerdame" checked name="recuerdame" value="1"> 
-					<label for="recuerdame">Recordar email</label>
+					<label for="recuerdame">Recordar datos</label>
 				</li>
 			</ul>
 			
