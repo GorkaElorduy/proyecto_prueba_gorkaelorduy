@@ -138,15 +138,26 @@ public class AlumnoDao implements Persistable<Alumno> {
 		return al;
 	}
 
-	public Alumno login(String nombre, String apellido) {
+	public Alumno login(String nombre, String apellido) throws SQLException {
 		
 		//para ENTRAR al login, se usa nombre y apellido
-		Alumno resultado = null;
+		Alumno alumno = null;
 		DbConnection conn = new DbConnection();
+		String sentencia = "select `alumnos.id`, alumnos.id_curso, `alumnos.nombre`, `alumnos.apellido_primero`, `alumnos.dni`,"
+				+ " `alumnos.nivel_estudios`, "
+				+ " alumnos.edad "
+				+ " from curso " + " where `alumnos.nombre` = ? and alumnos.apellido_primero = ?;";
 
-	
+		PreparedStatement pst = conn.getConnection().prepareStatement(sentencia);
+		pst.setString(1,nombre);
+		pst.setString(2,nombre);
+		//EJECUTAMOS LA CONSULTA
+		ResultSet rs = pst.executeQuery();
+		rs.next();
 		
-		return resultado;
+		alumno = mapeo(rs);
+		
+		return alumno;
 	}
 
 }
