@@ -16,7 +16,7 @@ public class AlumnoDao implements Persistable<Alumno> {
 		String sentencia = "select " + "`alumnos.id`, " + "`alumnos.nombre`, "
 				+ "`alumnos.apellido_primero`, " + "`alumnos.dni`, "
 				+ "`alumnos.nivel_estudios`, " + " alumnos.edad"
-				+ " from `curso`;";
+				+ " from `alumnos`;";
 		PreparedStatement consulta = conn.getConnection().prepareStatement(
 				sentencia);
 		ResultSet res = consulta.executeQuery();
@@ -39,7 +39,7 @@ public class AlumnoDao implements Persistable<Alumno> {
 		String sql = "select `alumnos.id`, alumnos.id_curso, `alumnos.nombre`, `alumnos.apellido_primero`, `alumnos.dni`,"
 				+ " `alumnos.nivel_estudios`, "
 				+ " alumnos.edad "
-				+ " from curso " + " where `id` = ?;";
+				+ " from alumnos " + " where `id` = ?;";
 
 		PreparedStatement consulta = conn.getConnection().prepareStatement(sql);
 		consulta.setInt(1, id);
@@ -146,7 +146,7 @@ public class AlumnoDao implements Persistable<Alumno> {
 		String sentencia = "select `alumnos.id`, alumnos.id_curso, `alumnos.nombre`, `alumnos.apellido_primero`, `alumnos.dni`,"
 				+ " `alumnos.nivel_estudios`, "
 				+ " alumnos.edad "
-				+ " from curso " + " where `alumnos.nombre` = ? and alumnos.apellido_primero = ?;";
+				+ " from alumnos " + " where `alumnos.nombre` = ? and alumnos.apellido_primero = ?;";
 
 		PreparedStatement pst = conn.getConnection().prepareStatement(sentencia);
 		pst.setString(1,nombre);
