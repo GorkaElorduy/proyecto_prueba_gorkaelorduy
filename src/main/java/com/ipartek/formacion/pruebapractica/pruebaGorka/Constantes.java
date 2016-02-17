@@ -27,15 +27,15 @@ public class Constantes {
 
 	public static final String CONTROLLER_ALUMNOS = "back/alumnos";
 	public static final String CONTROLLER_CURSOS = "back/cursos";
+	public static final String CONTROLLER_SEARCH = "back/search";
 
 	// VISTAS
 	public static final String VIEW_LOGIN = "login.jsp";
 	public static final String VIEW_INDEX = "index.jsp";
-	
-	public static final String VIEW_PUPIL_LIST = "/pages/users/alumnos.jsp";
-	public static final String VIEW_PUPIL_FORM = "/pages/users/alumnoDetalle.jsp";
-	
 
+	public static final String VIEW_PUPIL_LIST = "/pages/alumno/alumnos.jsp";
+	public static final String VIEW_PUPIL_FORM = "/pages/alumno/alumnoDetalle.jsp";
+	public static final String VIEW_PUPIL_SEARCH = "/pages/searchResult.jsp";
 	public static final String VIEW_CURSO_FORM = "/pages/curso/form.jsp";
 	public static final String VIEW_CURSO_LIST = "/pages/curso/list.jsp";
 
