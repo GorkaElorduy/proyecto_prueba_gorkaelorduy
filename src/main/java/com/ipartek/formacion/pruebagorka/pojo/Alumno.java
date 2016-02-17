@@ -38,7 +38,7 @@ public class Alumno {
 	/**
 	 * Constructor con parametros
 	 * 
-	 * @param id
+	 *
 	 * @param id_curso
 	 * @param nombre
 	 * @param apellido_primero
@@ -46,10 +46,9 @@ public class Alumno {
 	 * @param nivel_estudios
 	 * @param edad
 	 */
-	public Alumno(int id, int id_curso, String nombre, String apellido_primero,
+	public Alumno(int id_curso, String nombre, String apellido_primero,
 			String dni, String nivel_estudios, int edad) {
 		super();
-		this.id = id;
 		this.id_curso = id_curso;
 		this.nombre = nombre;
 		this.apellido_primero = apellido_primero;

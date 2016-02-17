@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<%@page import="com.ipartek.formacion.pruebapractica.pruebaGorka.Constantes"%>
+<%@page import="com.ipartek.formacion.pruebatest.Constantes"%>
 <%@ page errorPage="pages/error/error.jsp" %>
 
 <%@ page import="com.ipartek.formacion.pruebagorka.controladores.Mensaje"%>
