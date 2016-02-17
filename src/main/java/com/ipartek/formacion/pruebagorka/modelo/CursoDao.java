@@ -141,11 +141,8 @@ public class CursoDao implements Persistable<Curso> {
 		Curso c = new Curso();
 		c.setId(res.getInt("id"));
 		c.setNombre_curso(res.getString("nombre_curso"));
-
 		c.setFecha_inicio(res.getDate("fecha_inicio"));
-
 		c.setFecha_fin(res.getDate("fecha_fin"));
-
 		c.setNivel_requerido(res.getString("nivel_requerido"));
 		c.setArea(res.getString("area"));
 		c.setDuracion(res.getInt("duracion"));

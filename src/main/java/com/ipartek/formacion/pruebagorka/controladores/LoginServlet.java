@@ -86,7 +86,6 @@ public class LoginServlet extends HttpServlet {
 
 				String pNombre = request.getParameter("nombre");
 				String pApellido = request.getParameter("apellido");
-				String pIdioma = request.getParameter("idioma");
 				boolean recordar = (request.getParameter("recuerdame") == null ? false
 						: true);
 				Alumno a = alumnoDao.login(pNombre, pApellido);
@@ -109,8 +108,6 @@ public class LoginServlet extends HttpServlet {
 								+ " segundos por defecto");
 					}
 					// Guardar cookie del idioma
-					Cookie cIdioma = new Cookie("cIdioma", pIdioma);
-					response.addCookie(cIdioma);
 
 					// Guardar en Session el Usuario
 					session.setAttribute(Constantes.SESSION_USER_LOGGED, a);
@@ -126,7 +123,6 @@ public class LoginServlet extends HttpServlet {
 			}
 
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
 			log.error("Excepcion en Login " + e.getMessage());
 			dispatch = request.getRequestDispatcher(Constantes.VIEW_LOGIN);
 		} finally {

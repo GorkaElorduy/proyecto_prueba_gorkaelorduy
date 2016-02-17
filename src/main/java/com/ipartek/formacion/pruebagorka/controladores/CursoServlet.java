@@ -83,10 +83,9 @@ public class CursoServlet extends MasterServlet {
 			 */
 			dispatch.forward(request, response);
 		} catch (Exception e) {
-			// TODO mejor en un LOG
+
 			e.printStackTrace();
 
-			// TODO ir a página error 404.jsp o 500.jsp
 		}
 
 	}

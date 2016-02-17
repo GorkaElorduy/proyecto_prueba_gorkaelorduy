@@ -1,7 +1,6 @@
 package com.ipartek.formacion.pruebagorka.controladores;
 
 import java.io.IOException;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 import javax.servlet.RequestDispatcher;
@@ -34,9 +33,6 @@ public class MasterServlet extends HttpServlet {
 
 	protected ResourceBundle messages; // fichero de properties
 	protected static Mensaje msj; // Mensaje a mostrar la usuario
-	protected String idioma; // idioma session del usuario
-	protected String language;
-	protected String country;
 
 	/**
 	 * @see Servlet#init(ServletConfig)
@@ -69,11 +65,6 @@ public class MasterServlet extends HttpServlet {
 		session = request.getSession();
 		// idioma = (String)session.getAttribute(
 		// Constantes.SESSION_USER_LANGUAGE );
-		language = idioma.split("_")[0];
-		country = idioma.split("_")[1];
-		messages = null;
-		messages = ResourceBundle.getBundle("i18nmesages", new Locale(language,
-				country));
 		super.service(request, response);
 	}
 

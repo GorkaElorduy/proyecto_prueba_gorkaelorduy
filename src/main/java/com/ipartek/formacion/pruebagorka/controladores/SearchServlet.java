@@ -99,7 +99,7 @@ public class SearchServlet extends HttpServlet {
 
 		// cargamos la jsp
 		request.setCharacterEncoding("UTF-8");
-		request.setAttribute("listaUsuarios", listaAlumnos);
+		request.setAttribute("listaAlumnos", listaAlumnos);
 		request.setAttribute("criterio", criterio);
 		request.getRequestDispatcher(Constantes.VIEW_PUPIL_SEARCH).forward(
 				request, response);

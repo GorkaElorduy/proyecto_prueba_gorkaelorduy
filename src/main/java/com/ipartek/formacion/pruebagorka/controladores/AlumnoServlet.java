@@ -23,7 +23,7 @@ public class AlumnoServlet extends MasterServlet {
 	private static final long serialVersionUID = 1L;
 
 	private static int operacion;
-	private static String pId; // Parámetro identificador del usuario, aunque
+	private static String pId; // Parámetro identificador del alumno, aunque
 								// sea un id, es un string, luego se parsea
 
 	@Override
