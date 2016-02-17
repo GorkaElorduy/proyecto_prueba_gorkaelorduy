@@ -17,24 +17,26 @@ import com.ipartek.formacion.pruebagorka.modelo.AlumnoDao;
 import com.ipartek.formacion.pruebagorka.modelo.CursoDao;
 
 /**
- * Servlet implementation class MasterServlet
- * Servlet maestro que va a ser padre de todos los servlets
+ * Servlet implementation class MasterServlet Servlet maestro que va a ser padre
+ * de todos los servlets
  */
 public class MasterServlet extends HttpServlet {
-	
+
 	private static final long serialVersionUID = 1L;
-	//DAOs
+	// DAOs
 	protected static AlumnoDao alumnoDao;
 	protected static CursoDao cursoDao;
-		
-	protected RequestDispatcher dispatch; // El que se encarga de enrutar. Solo puede ir a un sitio, no se puede cargar dos veces	
+
+	protected RequestDispatcher dispatch; // El que se encarga de enrutar. Solo
+											// puede ir a un sitio, no se puede
+											// cargar dos veces
 	protected HttpSession session;
-	
-	protected ResourceBundle messages; //fichero de properties
-	protected static Mensaje msj; //Mensaje a mostrar la usuario
-	protected String idioma; //idioma session del usuario
-	protected String language; 
-	protected String country; 
+
+	protected ResourceBundle messages; // fichero de properties
+	protected static Mensaje msj; // Mensaje a mostrar la usuario
+	protected String idioma; // idioma session del usuario
+	protected String language;
+	protected String country;
 
 	/**
 	 * @see Servlet#init(ServletConfig)
@@ -56,18 +58,22 @@ public class MasterServlet extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
 	@Override
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");			
+	protected void service(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		msj = null;
 		session = request.getSession();
-		//idioma = (String)session.getAttribute( Constantes.SESSION_USER_LANGUAGE );
+		// idioma = (String)session.getAttribute(
+		// Constantes.SESSION_USER_LANGUAGE );
 		language = idioma.split("_")[0];
-		country = idioma.split("_")[1];		
+		country = idioma.split("_")[1];
 		messages = null;
-		messages = ResourceBundle.getBundle("i18nmesages", new Locale(language, country ));
+		messages = ResourceBundle.getBundle("i18nmesages", new Locale(language,
+				country));
 		super.service(request, response);
 	}
 

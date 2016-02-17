@@ -20,7 +20,7 @@
 	<div class="row">
 		
 		
-		<h2>Usuarios conectados</h2>
+		<h2>Alumnos conectados</h2>
 		<ol id="lista_user_logged">
 		
 		</ol>		

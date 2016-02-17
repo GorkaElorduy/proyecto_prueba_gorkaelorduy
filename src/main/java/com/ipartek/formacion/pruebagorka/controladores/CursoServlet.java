@@ -17,7 +17,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.ipartek.formacion.pruebagorka.pojo.Curso;
 import com.ipartek.formacion.pruebapractica.pruebaGorka.Constantes;
 
-
 /**
  * Servlet implementation class CursoServlet
  */
@@ -102,8 +101,7 @@ public class CursoServlet extends MasterServlet {
 
 	private void modificarCrear(HttpServletRequest request)
 			throws ParseException, SQLException {
-		Integer
-				.parseInt(request.getParameter("duracion"));
+		Integer.parseInt(request.getParameter("duracion"));
 
 		String pNombreCurso = request.getParameter("nombre"), pNivel = request
 				.getParameter("nivel_requerido"), pFechaInicio = request
