@@ -12,8 +12,9 @@
 			
 		
 		</div>
-		<a href="login.jsp">LOGUEATE</a>
-
+		<a href="login.jsp">LOGUEATE</a><br><br>
+		
+		<a href="pages/cursos/list.jsp">NUESTROS CURSOS</a>
 		</div>
 		</div>
 		<img alt="imagen" src="img/imagen1.jpg" width="900" height="900">	
