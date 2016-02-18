@@ -9,12 +9,8 @@ Password: primer apellido del alumno
 BBDD:
 gorka_bbbd
 tablas:
-cursos (PRIMARY KEY: id)
-alumnos (PRIMARY KEY: id)
+cursos
+alumnos 
 
-Atributos de cursos:
-id, nombre,fechaInicio, fechaFin, nivel_requerido, area, duración
 
-Atributos de alumnos:
-
-id, id_curso, nombre, apellido_primero, dni, nivel de estudios, edad
+LA BASE DE DATOS SE ENCUENTRA EN LA CARPETA script
